@@ -2,7 +2,7 @@
   "languages": {
     "Python": {
       "prettier": { "allowed": true },
-      "inlay_hints": { "show_background": true, "enabled": true }
+      "inlay_hints": { "show_background": false, "enabled": true }
     }
   },
   "project_name": "fastapi_s6ptember"
