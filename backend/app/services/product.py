@@ -6,7 +6,7 @@ from ..repositories.product import ProductRepository
 from ..schemas.product import ProductCreate, ProductResponse, ProductResponseList
 
 
-class CategoryService:
+class ProductService:
     def __init__(self, db: Session):
         self.product_repository = ProductRepository(db)
         self.category_repository = CategoryRepository(db)

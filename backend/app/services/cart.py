@@ -1,10 +1,11 @@
 from typing import Dict
 
+from fastapi import HTTPException, status
+from sqlalchemy.orm.session import Session
+
 from app.repositories.product import ProductRepository
 from app.schemas.cart import CartItem, CartItemCreate, CartItemUpdate, CartResponse
 from app.schemas.product import ProductResponse
-from fastapi import HTTPException, status
-from sqlalchemy.orm.session import Session
 
 
 class CartService:
