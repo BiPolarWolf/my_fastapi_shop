@@ -25,7 +25,7 @@ class ProductResponse(BaseModel):
     description: Optional[str]
     price: float
     category_id: int
-    category: CategoryResponse[str] = Field(..., description="Product Category Details")
+    category: CategoryResponse = Field(..., description="Product Category Details")
     image_url: Optional[str]
 
 

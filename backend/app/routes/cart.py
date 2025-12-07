@@ -8,7 +8,7 @@ from ..database import get_db
 from ..schemas.cart import CartItemCreate, CartItemUpdate, CartResponse
 from ..services.cart import CartService
 
-router = APIRouter(prefix="/api/cart/", tags=["cart"])
+router = APIRouter(prefix="/api/cart", tags=["cart"])
 
 
 class AddToCartRequest(BaseModel):
@@ -28,7 +28,7 @@ class RemoveFromCartRequest(BaseModel):
     cart_data: Dict[int, int] = {}
 
 
-@router.post("add/", status_code=status.HTTP_200_OK)
+@router.post("/add/", status_code=status.HTTP_200_OK)
 def add_to_cart(request: AddToCartRequest, db: Session = Depends(get_db)):
     cart_service = CartService(db)
 
@@ -39,7 +39,7 @@ def add_to_cart(request: AddToCartRequest, db: Session = Depends(get_db)):
     return {"cart": updated_cart}
 
 
-@router.post("update/", status_code=status.HTTP_200_OK)
+@router.post("/update/", status_code=status.HTTP_200_OK)
 def update_cart(request: CartUpdateRequest, db: Session = Depends(get_db)):
     cart_service = CartService(db)
 
@@ -50,14 +50,14 @@ def update_cart(request: CartUpdateRequest, db: Session = Depends(get_db)):
     return {"cart": updated_cart}
 
 
-@router.post("remove/", status_code=status.HTTP_200_OK)
+@router.post("/remove/", status_code=status.HTTP_200_OK)
 def remove_from_cart(request: RemoveFromCartRequest, db: Session = Depends(get_db)):
     cart_service = CartService(db)
     updated_cart = cart_service.remove_cart_item(request.cart_data, request.product_id)
     return {"cart": updated_cart}
 
 
-@router.post("", response_model=CartResponse, status_code=status.HTTP_200_OK)
+@router.post("/", response_model=CartResponse, status_code=status.HTTP_200_OK)
 def get_cart(cart_data: Dict[int, int], db: Session = Depends(get_db)):
     cart_service = CartService(db)
 
