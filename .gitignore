@@ -46,6 +46,7 @@ media/
 staticfiles/
 db.sqlite3
 
+
 # Logs
 logs
 *.log

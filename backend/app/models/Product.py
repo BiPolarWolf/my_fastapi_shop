@@ -18,7 +18,7 @@ class Product(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False, index=True)
-    slug = Column(String(255), unique=True, index=True, nullable=False)
+    slug = Column(String(255), unique=True, index=True, nullable=True)
     description = Column(Text, nullable=True)
     price = Column(Float, nullable=False)  # цена в копейках
     category_id = Column(Integer, ForeignKey("categories.id"), nullable=False)

@@ -1,5 +1,3 @@
-from typing import List
-
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 
@@ -10,7 +8,7 @@ from ..services.product import ProductService
 router = APIRouter(prefix="/api/products", tags=["products"])
 
 
-@router.get("/", status_code=status.HTTP_200_OK, response_model=List[ProductResponse])
+@router.get("/", status_code=status.HTTP_200_OK, response_model=ProductResponseList)
 def get_products(db: Session = Depends(get_db)):
     service = ProductService(db)
     return service.get_products_all()

@@ -28,6 +28,9 @@ class ProductResponse(BaseModel):
     category: CategoryResponse = Field(..., description="Product Category Details")
     image_url: Optional[str]
 
+    class Config:
+        from_attributes = True
+
 
 class ProductResponseList(BaseModel):
     products: list[ProductResponse]

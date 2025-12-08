@@ -14,3 +14,6 @@ class CategoryCreate(CategoryBase):
 
 class CategoryResponse(CategoryBase):
     id: int = Field(..., description="Category ID")
+
+    class Config:
+        from_attributes = True
