@@ -63,7 +63,7 @@ class CartService:
         validated_products = [ProductResponse.model_validate(pr) for pr in products]
         products_dict = {pr.id: pr for pr in validated_products}
 
-        items = []
+        items: list[CartItem] = []
         total_price = 0.0
         items_count = 0
 

@@ -63,4 +63,4 @@ def get_cart(cart_data: Dict[int, int], db: Session = Depends(get_db)):
 
     updated_cart_data = cart_service.get_cart_details(cart_data)
 
-    return {"cart": updated_cart_data}
+    return updated_cart_data
