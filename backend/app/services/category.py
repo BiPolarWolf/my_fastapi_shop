@@ -1,8 +1,8 @@
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 
-from ..repositories.category import CategoryRepository
-from ..schemas.category import CategoryCreate, CategoryResponse
+from app.repositories.category import CategoryRepository
+from app.schemas.category import CategoryCreate, CategoryResponse
 
 
 class CategoryService:

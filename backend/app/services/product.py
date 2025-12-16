@@ -1,9 +1,9 @@
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 
-from ..repositories.category import CategoryRepository
-from ..repositories.product import ProductRepository
-from ..schemas.product import ProductCreate, ProductResponse, ProductResponseList
+from app.repositories.category import CategoryRepository
+from app.repositories.product import ProductRepository
+from app.schemas.product import ProductCreate, ProductResponse, ProductResponseList
 
 
 class ProductService:
