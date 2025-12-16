@@ -7,14 +7,13 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Копируем requirements.txt
-COPY requirements.txt .
+COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Копируем весь код backend
-COPY . .
+COPY backend/ .
 
-# Устанавливаем PYTHONPATH
-ENV PYTHONPATH=/app
+
 
 # Создаем директорию для статики
 RUN mkdir -p static/images
