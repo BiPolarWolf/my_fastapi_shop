@@ -13,6 +13,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копируем весь код backend
 COPY . .
 
+# Устанавливаем PYTHONPATH
+ENV PYTHONPATH=/app
+
 # Создаем директорию для статики
 RUN mkdir -p static/images
 RUN chmod -R 755 static
