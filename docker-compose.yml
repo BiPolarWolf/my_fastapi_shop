@@ -7,8 +7,8 @@ services:
       dockerfile: backend/Dockerfile
     container_name: fashop_backend
     volumes:
-      - ./backend:/app
-      - backend_static:/app/static
+      - ./backend:/code
+      - backend_static:/code/static
     environment:
       - APP_NAME=${APP_NAME:-FastAPI Shop}
       - DEBUG=${DEBUG:-False}
