@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     ]
 
     static_dir: str = "static"
-    image_dir: str = "static/images"
+    images_dir: str = "static/images"
 
     class Config:
         env_file = ".env"
