@@ -5,9 +5,9 @@
 Использует placeholder изображения с unsplash.com.
 """
 
-from app.database import SessionLocal, init_db
-from app.models.category import Category
-from app.models.product import Product
+from .app.database import SessionLocal, init_db
+from .app.models.category import Category
+from .app.models.product import Product
 
 
 def create_categories(db):
